@@ -8,6 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: yunwuxin <448901948@qq.com>
 // +----------------------------------------------------------------------
+namespace think;
 
 /**
  * Class BaseRequest
@@ -123,12 +124,12 @@ abstract class BaseRequest
     /**
      * 创建一个URL请求
      * @access public
-     * @param string $uri URL地址
+     * @param string $uri    URL地址
      * @param string $method 请求类型
-     * @param array $params 请求参数
-     * @param array $cookie
-     * @param array $files
-     * @param array $server
+     * @param array  $params 请求参数
+     * @param array  $cookie
+     * @param array  $files
+     * @param array  $server
      * @param string $content
      * @return static
      */
