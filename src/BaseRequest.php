@@ -81,9 +81,9 @@ namespace think;
 abstract class BaseRequest
 {
     /**
-     * @var static 对象实例
+     * @var static[] 对象实例
      */
-    protected static $instance;
+    protected static $instance = [];
 
     /**
      * @var \think\Request
@@ -105,11 +105,11 @@ abstract class BaseRequest
      */
     public static function instance($options = [])
     {
-        if (is_null(self::$instance)) {
-            self::$instance = new static();
+        if (!isset(self::$instance[static::class])) {
+            self::$instance[static::class] = new static();
         }
-        self::$instance->setRequest($options);
-        return self::$instance;
+        self::$instance[static::class]->setRequest($options);
+        return self::$instance[static::class];
     }
 
     /**
